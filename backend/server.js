@@ -3,7 +3,13 @@ const mongoose = require('mongoose');
 require('dotenv').config();
 const todoItemsRouter = require('./routes/todoItems');
 
+const cors = require('cors');
 const app = express();
+
+app.use(cors());
+app.use(express.json());
+app.use('/', todoItemsRouter);
+
 
 app.use(express.json()); // for parsing application/json
 

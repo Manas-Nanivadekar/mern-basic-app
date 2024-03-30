@@ -4,8 +4,9 @@ const router = express.Router();
 const TodoItem = require('../models/TodoItem');
 
 router.post('/', async (req, res) => {
+  console.log(req.body);
   const newItem = new TodoItem({
-    text: req.body.text,
+    text: req.body.text.text,
   });
   try {
     const savedItem = await newItem.save();
