@@ -1,6 +1,6 @@
 // frontend/src/services/api.js
 
-const baseUrl = 'http://localhost:5000/'; // Assuming your server.js mounts this router at the root
+const baseUrl = process.env.REACT_APP_BASE_URL; // Assuming your server.js mounts this router at the root
 
 export const fetchTodos = async () => {
   const response = await fetch(baseUrl);
